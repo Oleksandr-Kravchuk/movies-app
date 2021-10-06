@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- 14.17.3
+install:
+- npm install
+- npm run build
+branches:
+  only:
+  - main
+deploy:
+  provider: heroku
+  app: react-stream-movies
+  api_key:
+    secure: grXbtCf30KqlcZUr4L8GK/2l1viis6awi49TTiPpBIBMOe8whjiSZVSxqe6rI4Fc0LPCCJst5hppKpLyM3cecJbJGKQdAUZ0uVApB8HZ0PWxlZ+P8cpnfI9LaIJbKPX6vhSjGd1v4ZH5biqzIgZq7dcpg1xqqzmnchWV7Jx6gtkraJU39pVW7wov96MbKn1vLN9wqgIOsTXZ5jpMkfCx3Ij2okMe3uirEpClwPpdEStr9kKrPl+50Mp8JCmmeeDpDTfqV9Wa0dAjCg/yPt40zLO29EbqA1dq8PKMfmNflFOgk1GEBZLR09+gt+9C8JV0Dlq1jGUxmI8r7kWxVppqJkCVZmYsOLtwFYOJOKiiMAkSm47Oz6BqFKuYOSg7+1E5jdK6S2mhXGs4c0B3vFbSGWol0yJLucOwTVgVRX/LJHtY7NK4j5bIjWKqnQ2o7p4jr5uvjfLF4VxDkLXx8fpKM4z8cgca7+yQ6pVLexmcCzLRu5EOEsZoCQ2+R5hmKIvTAqmLHtC0BVXTa/+tb+hIuxk9ePoYo3bfFusz0wkNbsyBdCSaNiJWorlOyBfH+QQtKvI84n+Eg9AP9BwY8i8AZFxsByNfyx7OCi8bbdNGxOyIJ2C9gbflfvWm2EXkbSCr9oUqtCheIp+FZHEfV9keusYSba9Iit0hLC8IAKuKnA8=
+  on:
+    all_branches: true
