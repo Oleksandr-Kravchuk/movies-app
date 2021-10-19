@@ -18,6 +18,8 @@ const {
 app.use(express.static(path.join(__dirname, 'build')));
 
 
+
+
 const optionsCors = {
   'origin': '*',
   'allowedHeaders': 'Content-Type,Authorization',
@@ -46,10 +48,9 @@ app.use((err, req, res, next) => {
   res.status(500).json({message: err.message});
 });
 
-app.get('*', function (req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
-
 
 const start = async () => {
   try {
