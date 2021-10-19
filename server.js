@@ -15,11 +15,7 @@ const {
   DB_URL,
 } = require('./server/config');
 
-// app.use(express.static(path.join(__dirname, 'build')));
-
-// app.get('/*', function (req, res) {
-//   res.sendFile(path.join(__dirname, 'build', 'index.html'));
-// });
+app.use(express.static(path.join(__dirname, 'build')));
 
 
 const optionsCors = {
@@ -48,6 +44,10 @@ app.use((err, req, res, next) => {
   }
 
   res.status(500).json({message: err.message});
+});
+
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 
