@@ -29,9 +29,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "node server.js",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
